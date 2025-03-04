@@ -13,4 +13,19 @@ void loop() {
 
 پروژه ۲ 
 در این پروژه با بستن یک مدار ساده که در آن یک دکمه وجود دارد led موجود بر روی اردینو را روشن و خاموش کردیم به این صورت که با فشار دادن دکمه led روشن و با رها کردنش led خاموش شود
+int led = 13;
+int button = 7;
+int state = 0;
+void setup() {
+  pinMode(led, OUTPUT);
+  pinMode(button, INPUT);
+}
 
+void loop() {
+  state = digitalRead(button);
+  if (state == HIGH) {
+    digitalWrite(led, HIGH);
+  } else {
+    digitalWrite(led, LOW);
+  }
+}
